@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(
 );
 
 const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 50);
-camera.position.set(...new THREE.Vector3(0, 5, -15).toArray());
+camera.position.set(...new THREE.Vector3(0, 5, -5).toArray());
 camera.lookAt(0.0, 0, 0);
 
 root.render(
