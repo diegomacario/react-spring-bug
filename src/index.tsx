@@ -1,15 +1,16 @@
 import ReactDOM from "react-dom/client";
 import "./style.css";
 import { Canvas } from "@react-three/fiber";
-import * as THREE from "three";
+import { PerspectiveCamera } from "three";
 import { OrbitControls } from "@react-three/drei";
+import AnimatedCube from "./AnimatedCube";
 
 const root = ReactDOM.createRoot(
   document.querySelector("#root") as HTMLElement
 );
 
-const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 50);
-camera.position.set(...new THREE.Vector3(5, 5, 5).toArray());
+const camera = new PerspectiveCamera(45, 1, 0.1, 50);
+camera.position.set(7.5, 7.5, 7.5);
 camera.lookAt(0, 0, 0);
 
 root.render(
@@ -22,7 +23,8 @@ root.render(
     >
       <color attach="background" args={["black"]} />
       <OrbitControls />
-      <axesHelper args={[1]} />
+      <axesHelper args={[5]} />
+      <AnimatedCube />
     </Canvas>
   </>
 );
