@@ -2,7 +2,6 @@ import ReactDOM from "react-dom/client";
 import "./style.css";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "three";
-import { OrbitControls } from "@react-three/drei";
 import AnimatedCube from "./AnimatedCube";
 
 const root = ReactDOM.createRoot(
@@ -22,7 +21,6 @@ root.render(
       shadows={false}
     >
       <color attach="background" args={["black"]} />
-      <OrbitControls />
       <axesHelper args={[5]} />
       <AnimatedCube />
     </Canvas>

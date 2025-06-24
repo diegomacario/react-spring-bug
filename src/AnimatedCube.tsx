@@ -1,6 +1,5 @@
 import { useSpring, easings } from "@react-spring/web";
-import { button, useControls } from "leva";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Mesh } from "three";
 
 export default function AnimatedCube() {
@@ -23,18 +22,9 @@ export default function AnimatedCube() {
     []
   );
 
-  useControls(
-    "Animated Cube",
-    {
-      "Start Spring": button(() => {
-        heightSpringAPI.start({
-          from: { progress: 0.0 },
-          to: { progress: 1.0 },
-        });
-      }),
-    },
-    { collapsed: false }
-  );
+  useEffect(() => {
+    heightSpringAPI.start({ progress: 1.0 });
+  }, []);
 
   return (
     <>
