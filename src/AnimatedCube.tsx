@@ -15,7 +15,7 @@ export default function AnimatedCube() {
       progress: 0.0,
       config: {
         easing: easings.easeOutCubic,
-        duration: 1500,
+        duration: 5000,
       },
       onChange: () => {
         if (meshRef.current) {
