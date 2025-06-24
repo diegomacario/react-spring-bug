@@ -1,10 +1,10 @@
 import { useSpring, easings } from "@react-spring/web";
 import { useEffect, useRef } from "react";
 import { Mesh } from "three";
-import { useAnimationStore } from "./useAnimationStore";
+import { useReRenderStore } from "./useReRenderStore";
 
 export default function AnimatedCube() {
-  const { startAnimation } = useAnimationStore();
+  const { causeReRender } = useReRenderStore();
 
   const meshRef = useRef<Mesh>(null);
 

@@ -3,7 +3,7 @@ import "./style.css";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "three";
 import AnimatedCube from "./AnimatedCube";
-import AnimationStarter from "./AnimationStarter";
+import ReRenderSource from "./ReRenderSource";
 
 const root = ReactDOM.createRoot(
   document.querySelector("#root") as HTMLElement
@@ -15,16 +15,11 @@ camera.lookAt(0, 0, 0);
 
 root.render(
   <>
-    <Canvas
-      dpr={[1, 2]}
-      camera={camera}
-      gl={{ powerPreference: "high-performance", antialias: false }}
-      shadows={false}
-    >
+    <Canvas camera={camera}>
       <color attach="background" args={["black"]} />
       <axesHelper args={[5]} />
       <AnimatedCube />
-      <AnimationStarter />
+      <ReRenderSource />
     </Canvas>
   </>
 );
