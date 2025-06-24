@@ -3,6 +3,7 @@ import "./style.css";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "three";
 import AnimatedCube from "./AnimatedCube";
+import AnimationStarter from "./AnimationStarter";
 
 const root = ReactDOM.createRoot(
   document.querySelector("#root") as HTMLElement
@@ -23,6 +24,7 @@ root.render(
       <color attach="background" args={["black"]} />
       <axesHelper args={[5]} />
       <AnimatedCube />
+      <AnimationStarter />
     </Canvas>
   </>
 );
